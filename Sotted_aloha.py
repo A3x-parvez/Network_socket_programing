@@ -6,9 +6,9 @@ def simulate_frame_transmission(total_frames):
     frame_id = 0
 
     while successful_frames < total_frames:
+        print("waiting for new time slot")
+        time.sleep(1) # Simulate waiting for the next time slot
         print(f"\nAttempting to send frame {frame_id}...")
-        time.sleep(1)  # Simulate waiting for the next time slot
-
         # Simulate sending the frame
         if random.choice([True, False]):  # Randomly decide if ACK is received or collision occurs
             print(f"Frame {frame_id} transmitted successfully.")

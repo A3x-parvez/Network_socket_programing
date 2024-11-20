@@ -1,4 +1,5 @@
 import time
+import random
 
 def stopNwait(frames):
     i=0
@@ -6,15 +7,15 @@ def stopNwait(frames):
     remain_frame = frames
     while remain_frame > 0:
         print(f"Sending frame {i}")
-        i=i+1
         time.sleep(1)
-        if i%2 ==0:
-            print(f"{i-1} Frame lost ......")
+        if random.choice([True,False]):
+            print(f"{i} Frame lost ......")
             time.sleep(2)
-            print(f"Resend the frame {i-1}")
+            print(f"Resend the frame {i}")
     
         print(f"Acknowledgement recived for {j}")
         j=j+1
+        i=i+1
         remain_frame = remain_frame-1       
     print("Sending complete.")     
     
